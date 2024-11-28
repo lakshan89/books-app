@@ -1,0 +1,54 @@
+<form action="" [formGroup]="bookManageForm">
+  <div class="form-group">
+    <label for="">Title</label>
+    <input type="text" class="form-control" required formControlName="title" />
+  </div>
+
+  <div class="form-group">
+    <label for="">Author</label>
+    <input type="text" class="form-control" required formControlName="author" />
+  </div>
+
+  <div class="form-group">
+    <label for="">Year</label>
+    <input type="number" class="form-control" required formControlName="year" />
+  </div>
+
+  <div class="form-group">
+    <label for="">Description</label>
+    <textarea
+      name=""
+      id=""
+      class="form-control"
+      formControlName="description"
+    ></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="">Category</label>
+    <select name="" id="" class="form-control" formControlName="category">
+      <option value="" *ngFor="let op of categoryOptions" [value]="op">
+        {{ op }}
+      </option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="">Last Update</label>
+    <input
+      type="text"
+      class="form-control"
+      readonly
+      formControlName="lastUpdated"
+    />
+  </div>
+
+  <div class="form-group d-flex justify-content-between">
+    <button class="btn btn-danger" (click)="onDelete(selectedId)">
+      Delete
+    </button>
+    <button class="btn btn-primary" (click)="onUpdate()">
+      Create / Update
+    </button>
+  </div>
+</form>

@@ -1,0 +1,12 @@
+<div class="category-list">
+  <ng-container *ngIf="books$ | async as books">
+    <ul class="list-unstyled">
+      @for (book of books; track book.id) {
+      <li (click)="onSelect(book.id)" class="list-item">
+        <p>{{ book.title }}</p>
+        <small>{{ book.author }}</small>
+      </li>
+      }
+    </ul>
+  </ng-container>
+</div>
