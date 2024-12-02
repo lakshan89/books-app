@@ -11,9 +11,9 @@ export interface Book {
 export enum BookCategory {
   Dystopian = 'Dystopian',
   Philosophical = 'Philosophical',
-  PhilosophicalFiction = 'Philosophical Fiction',
+  'Philosophical Fiction' = 'Philosophical Fiction',
   Fantasy = 'Fantasy',
-  ComingOfAge = 'Coming-of-Age',
+  'Coming Of Age' = 'Coming Of Age',
   Adventure = 'Adventure',
   Romance = 'Romance',
   Fiction = 'Fiction',

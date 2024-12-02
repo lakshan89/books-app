@@ -55,7 +55,7 @@ export const books: Book[] = [
     title: 'The Catcher in the Rye',
     author: 'J.D. Salinger',
     year: 1951,
-    category: BookCategory.ComingOfAge,
+    category: BookCategory['Coming Of Age'],
     lastUpdated: '28-12-2024',
     description:
       'A story of teenage alienation and rebellion, narrated by the iconic Holden Caulfield.',
@@ -75,7 +75,7 @@ export const books: Book[] = [
     title: 'Crime and Punishment',
     author: 'Fyodor Dostoevsky',
     year: 1866,
-    category: BookCategory.PhilosophicalFiction,
+    category: BookCategory['Philosophical Fiction'],
 
     lastUpdated: '28-12-2024',
     description:
