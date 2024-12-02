@@ -4,7 +4,6 @@ import { BooksManageComponent } from './components/books-manage/books-manage.com
 
 const routes: Routes = [
   { path: 'view/:id', component: BooksManageComponent },
-  { path: 'update/:id', component: BooksManageComponent },
   { path: 'create', component: BooksManageComponent },
 ];
 
