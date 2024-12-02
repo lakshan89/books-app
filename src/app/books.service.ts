@@ -26,6 +26,11 @@ export class BooksService {
     this.books.next(this.booksList);
   }
 
+  cerateBook(book: Book) {
+    this.booksList.push(book);
+    this.books.next(this.booksList);
+  }
+
   getBookById(bookId: number) {
     return this.booksList.find((book: Book) => book.id == bookId);
   }

@@ -45,10 +45,7 @@ export class BooksManageComponent {
       nonNullable: true,
       validators: [Validators.required],
     }),
-    lastUpdated: new FormControl('', {
-      nonNullable: true,
-      validators: [Validators.required],
-    }),
+    lastUpdated: new FormControl(''),
   });
 
   ngOnInit() {
@@ -63,6 +60,17 @@ export class BooksManageComponent {
         );
         if (selectedBook) {
           this.setFormValue(selectedBook);
+        } else {
+          // create
+          this.setFormValue({
+            id: 0,
+            title: '',
+            author: '',
+            year: 0,
+            description: '',
+            category: undefined,
+            lastUpdated: '',
+          });
         }
       });
   }
@@ -85,13 +93,26 @@ export class BooksManageComponent {
 
   onUpdate() {
     if (this.bookManageForm.valid) {
-      let updateBook: Book = {
-        ...this.bookManageForm.value,
-        lastUpdated: new Date().toString(),
-        id: +this.selectedId,
-        category: BookCategory.Adventure,
-      };
-      this._booksService.updateBook(+this.selectedId, updateBook);
+     
+      if (this.selectedId) {
+        let updateBook: Book = {
+          ...this.bookManageForm.value,
+          lastUpdated: new Date().toString(),
+          id: +this.selectedId,
+          category: BookCategory.Adventure,
+        };
+        this._booksService.updateBook(+this.selectedId, updateBook);
+      } else {
+        // create
+        let updateBook: Book = {
+          ...this.bookManageForm.value,
+          lastUpdated: new Date().toString(),
+          id: +new Date(),
+          category: BookCategory.Adventure,
+        };
+
+        this._booksService.cerateBook(updateBook);
+      }
     }
   }
 
