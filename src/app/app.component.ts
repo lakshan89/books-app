@@ -30,7 +30,6 @@ export class AppComponent implements OnInit {
   }
 
   onBookSelect(bookId: number) {
-    console.log('bookId ==>', bookId);
     this._router.navigate(['view', bookId]);
   }
 }

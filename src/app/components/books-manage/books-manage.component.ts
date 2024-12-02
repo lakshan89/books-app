@@ -93,8 +93,8 @@ export class BooksManageComponent {
 
   onUpdate() {
     if (this.bookManageForm.valid) {
-     
       if (this.selectedId) {
+        // On Update
         let updateBook: Book = {
           ...this.bookManageForm.value,
           lastUpdated: new Date().toString(),

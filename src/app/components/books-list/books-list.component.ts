@@ -12,7 +12,9 @@ import { Book } from '../../types/book.type';
 export class BooksListComponent implements OnInit {
   @Input() books$: Observable<Book[]> | undefined;
   @Output() bookId = new EventEmitter<number>();
+
   constructor() {}
+  
   ngOnInit() {}
 
   onSelect(bookId: number) {
