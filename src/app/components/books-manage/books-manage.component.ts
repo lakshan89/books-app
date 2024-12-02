@@ -99,7 +99,7 @@ export class BooksManageComponent {
           ...this.bookManageForm.value,
           lastUpdated: new Date().toString(),
           id: +this.selectedId,
-          category: BookCategory.Adventure,
+          category: BookCategory.Adventure, //TODO: Set the correct category
         };
         this._booksService.updateBook(+this.selectedId, updateBook);
       } else {
@@ -108,7 +108,7 @@ export class BooksManageComponent {
           ...this.bookManageForm.value,
           lastUpdated: new Date().toString(),
           id: +new Date(),
-          category: BookCategory.Adventure,
+          category: BookCategory.Adventure, //TODO: Set the correct category
         };
 
         this._booksService.cerateBook(updateBook);
