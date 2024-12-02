@@ -4,7 +4,7 @@
       @for (book of books; track book.id) {
       <li (click)="onSelect(book.id)" class="list-item">
         <p>{{ book.title }}</p>
-        <small>{{ book.author }}</small>
+        <small>{{ book.author }} - {{ book.year }} - {{ book.category }}</small> 
       </li>
       }
     </ul>
